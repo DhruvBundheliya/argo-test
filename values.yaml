@@ -1,1 +1,2 @@
-
+master
+  replicas: 2
