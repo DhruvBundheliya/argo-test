@@ -1,0 +1,16 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: test
+  namespace: argocd
+spec:
+  destination:
+    namespace: argocd
+    server: 'https://kubernetes.default.svc'
+  source:
+    repoURL: https://github.com/DhruvBundheliya/argo-test.git
+    path: test/
+    targetRevision: HEAD
+  syncPolicy:
+    automated:
+      prune: false
